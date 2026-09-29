@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>RAG Research Assistant</title>
+
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <header class="header">
+            <div class="logo">
+                🤖
+            </div>
+
+            <div>
+                <h1>RAG Research Assistant</h1>
+                <p>Ask questions from your documents using AI</p>
+            </div>
+        </header>
+
+
+        <main>
+
+            <!-- Status -->
+            <div id="status" class="status">
+                Checking system status...
+            </div>
+
+
+            <!-- Question Card -->
+            <section class="card">
+
+                <h2>Ask a Question</h2>
+
+                <p class="description">
+                    Ask anything related to the documents stored in the knowledge base.
+                </p>
+
+                <textarea
+                    id="question"
+                    placeholder="Example: What are the main causes of climate change?"
+                    rows="5"
+                ></textarea>
+
+
+                <div class="options">
+
+                    <div>
+                        <label for="topK">Number of sources</label>
+
+                        <select id="topK">
+                            <option value="3">3</option>
+                            <option value="5" selected>5</option>
+                            <option value="10">10</option>
+                        </select>
+                    </div>
+
+                </div>
+
+
+                <button id="askButton">
+                    🔍 Ask Question
+                </button>
+
+            </section>
+
+
+            <!-- Loading -->
+            <div id="loading" class="loading hidden">
+                <div class="spinner"></div>
+                <span>Searching documents and generating answer...</span>
+            </div>
+
+
+            <!-- Answer -->
+            <section id="answerSection" class="card hidden">
+
+                <h2>🤖 AI Answer</h2>
+
+                <div id="answer" class="answer"></div>
+
+            </section>
+
+
+            <!-- Sources -->
+            <section id="sourcesSection" class="card hidden">
+
+                <h2>📚 Sources</h2>
+
+                <div id="sources"></div>
+
+            </section>
+
+
+            <!-- Error -->
+            <div id="error" class="error hidden"></div>
+
+        </main>
+
+
+        <footer>
+            <p>Powered by Groq + ChromaDB + FastAPI</p>
+        </footer>
+
+    </div>
+
+
+    <script src="/static/script.js"></script>
+
+</body>
+</html>
