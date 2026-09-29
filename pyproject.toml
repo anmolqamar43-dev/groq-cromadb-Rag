@@ -1,2 +1,8 @@
+[project]
+name = "groq-chromadb-rag"
+version = "1.0.0"
+description = "Groq and ChromaDB RAG application"
+requires-python = ">=3.12"
+
 [tool.vercel]
 entrypoint = "api:app"
